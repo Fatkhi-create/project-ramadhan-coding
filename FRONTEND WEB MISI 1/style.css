@@ -1,0 +1,117 @@
+*, *::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+/*variabel beberapa warna yang digunakan*/
+:root {
+--gold:       #C9A84C;
+--gold-light: #E8D08A;
+--cream:      #FAF6EE;      
+--green-dark: #1A3A2A;
+--green-mid:  #2D5A3D;
+--green-light:#4A8C60;
+--sand:       #EDE0C4;
+--text:       #2C1A0E;
+}  
+html { 
+    scroll-behavior: smooth; 
+}    
+
+/*bagian body*/
+body {
+    font-family: 'Lora', Georgia, serif;
+    color: var(--text);
+    background-color: var(--cream);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(ellipse 60% 40% at 20% 10%, rgba(201,168,76,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 80% 90%, rgba(45,90,61,.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/*bagian headernya*/
+header {
+    position: relative;
+    color: var(--cream);
+    background: linear-gradient(160deg, var(--green-dark) 0%, var(--green-mid) 60%, #1e4d30 100%);
+    text-align: center;
+    padding: 3.5rem 1.5rem 3rem;
+    overflow: hidden;
+    z-index: 1;
+}
+
+header::before, header::after {
+    content: '';
+    position: absolute;
+    border: 2px solid rgba(201,168,76,.35);
+    border-radius: 50%;
+    animation: pulse 6s ease-in-out infinite alternate;
+}
+header::before { width: 280px; height: 280px; top: -80px; left: -80px; }
+header::after  { width: 200px; height: 200px; bottom: -60px; right: -60px; animation-delay: 3s; }
+
+/*buat animasi belakangnya header */
+@keyframes pulse {
+    from { transform: scale(1); opacity: .4; }
+    to   { transform: scale(1.15); opacity: .15; }
+}
+
+/*buat animasi bulan sabitnya header */
+.bulan-sabit {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: .5rem;
+    display: inline-block;
+    animation: sway 4s ease-in-out infinite alternate;
+}
+@keyframes sway {
+    from { transform: rotate(-8deg); }
+    to   { transform: rotate(8deg); }
+}
+
+/*buat headernya*/
+header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    color: var(--gold-light);
+    letter-spacing: .05em;
+    text-shadow: 0 2px 12px rgba(0,0,0,.4);
+    position: relative;
+    z-index: 1;
+}
+header p.subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: clamp(.9rem, 2.2vw, 1.05rem);
+    color: rgba(250,246,238,.75);
+    margin-top: .6rem;
+    position: relative;
+    z-index: 1;
+}
+
+/*buat animasi cahaya di header*/
+.cahaya {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.2rem auto 0;
+    position: relative;
+    z-index: 1;
+}
+.cahaya span { height: 1px; width: 80px; background: var(--gold); opacity: .7; }
+.cahaya i { color: var(--gold); font-style: normal; font-size: 1.1rem; }
+
+/* bagian responsive buat selain laptop */
+@media (max-width: 600px) {
+    nav { gap: .5rem; }
+    nav a { font-size: .8rem; padding: .35rem .8rem; }
+    .section-body { padding: 1.4rem 1.2rem 1.8rem; }
+    article.doa-card { padding: 1.4rem 1.2rem 1.4rem 1.5rem; }
+    .arabic { font-size: 1.45rem; }
+    
+}

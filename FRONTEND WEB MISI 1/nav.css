@@ -1,0 +1,28 @@
+/*buat navigasi */
+nav {
+    display: flex;
+    top: 0;
+    padding: .75rem 1rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,.25);
+    background: rgba(26,58,42,.96);
+    backdrop-filter: blur(6px);
+    gap: 1rem;
+    justify-content: center;
+    position: sticky;
+    z-index: 100;
+}
+nav a {
+    font-family: 'Lora', serif;
+    font-size: .9rem;
+    color: var(--gold-light);
+    text-decoration: none;
+    letter-spacing: .04em;
+    padding: .4rem 1.1rem;
+    border: 1px solid rgba(201,168,76,.3);
+    border-radius: 2rem;
+    transition: background .25s, color .25s;
+}
+nav a:hover {
+    color: var(--green-dark);
+    background: var(--gold);  
+}
