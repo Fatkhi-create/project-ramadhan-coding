@@ -1,0 +1,96 @@
+:root {
+--gold:        #C9A84C;
+--gold-light:  #E8D08A;
+--gold-pale:   #FDF6E3;
+--green-dark:  #1A3A2A;
+--green-mid:   #2D5A3D;
+--green-light: #4A8C60;
+--cream:       #FAF6EE;
+--text:        #1e2a1e;
+}
+/*merubah css*/
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { 
+    scroll-behavior: smooth; 
+}
+body {
+    font-family: 'Lora', Georgia, serif;
+    color: var(--cream);
+    background: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+/*starfield*/
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(ellipse 60% 40% at 20% 10%, rgba(201,168,76,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 80% 90%, rgba(45,90,61,.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+/*bagian header*/
+header {
+    text-align: center;
+    padding: 2.2rem 1.5rem 1.5rem;
+    border-bottom: 1px solid rgba(201,168,76,.2);
+    background: var(--green-dark);
+    position: relative;
+    z-index: 1;
+}
+header::before, header::after {
+    content: '';
+    position: absolute;
+    border: 2px solid rgba(201,168,76,.35);
+    border-radius: 50%;
+    animation: pulse 6s ease-in-out infinite alternate;
+}
+header::before { width: 200px; height: 200px; top: -100px; left: -80px; }
+header::after  { width: 200px; height: 200px; bottom: 30px; right: -60px; }
+
+/*buat animasi belakangnya header */
+@keyframes pulse {
+    from { transform: scale(1); opacity: .4; }
+    to   { transform: scale(1.15); opacity: .15; }
+}
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    margin-bottom: .4rem;
+}
+header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.1rem, 3.5vw, 1.7rem);
+    color: var(--gold-light);
+    letter-spacing: .06em;
+    text-shadow: 0 0 20px rgba(201,168,76,.4);
+}
+header p.subtitle {
+    font-style: italic;
+    font-size: .88rem;
+    color: rgba(250,246,238,.55);
+    letter-spacing: .04em;
+}
+
+/*animasi bulan sabit*/
+.bulan-sabit {
+    font-size: 1.6rem;
+    animation: moonFloat 3s ease-in-out infinite alternate;
+}
+ @keyframes moonFloat {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-6px); }
+}
+/*bagian responsif*/
+    @media (max-width: 480px) {
+      .counter-card { padding: 2rem 1.4rem 1.6rem; border-radius: 1.4rem; }
+      .btn-group { gap: .7rem; }
+    }
+
