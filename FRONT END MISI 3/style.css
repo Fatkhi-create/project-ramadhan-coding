@@ -1,0 +1,94 @@
+:root {
+    --gold:        #C9A84C;
+    --gold-light:  #E8D08A;
+    --green-dark:  #1A3A2A;
+    --green-mid:   #2D5A3D;
+    --green-light: #4A8C60;
+    --cream:       #FAF6EE;
+    --sand:        #EDE0C4;
+    --text:        #1C1C1C;
+    --muted:       #6B7B6B;
+    --danger:      #C0392B;
+    --success:     #1e6b3a;
+}
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+html { 
+    scroll-behavior: smooth; 
+}
+ /*dekorasi buat background*/
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(ellipse 70% 50% at 0% 0%, #c9a84c17 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 100% 100%, #2d5a3d1a 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+/*headernya*/
+header {
+    text-align: center;
+    color: var(--cream);
+    background: linear-gradient(150deg, var(--green-dark) 0%, var(--green-mid) 100%);
+    padding: 2.8rem 1.5rem 2.2rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+header::before {
+    content: '';
+    top: -120px; right: -80px;
+    width: 320px; height: 320px;
+    border: 1.5px solid #c9a84c33;
+    border-radius: 50%;
+    position: absolute;
+}
+header::after {
+    content: '';
+    position: absolute;
+    width: 200px; height: 200px;
+    border: 1.5px solid #c9a84c26;
+    border-radius: 50%;
+    bottom: -80px; left: -40px;
+}
+
+header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.2rem, 3.5vw, 2rem);
+    color: var(--gold-light);
+    letter-spacing: .05em;
+    position: relative;
+    z-index: 1;
+}
+header p.subtitle {
+    font-style: italic;
+    font-size: .88rem;
+    color: #faf6ee99;
+    margin-top: .4rem;
+    position: relative;
+    z-index: 1;
+}
+.cahaya {
+    display: flex; 
+    align-items: center;
+    gap: .8rem;
+    justify-content: center; 
+    margin-top: 1rem;
+    position: relative; 
+    z-index: 1;
+}
+.cahaya span { 
+    height: 1px; 
+    width: 60px; 
+    background: var(--gold); 
+    opacity: .6; 
+}
+.cahaya i { 
+    font-style: normal; 
+    color: var(--gold); 
+}    
