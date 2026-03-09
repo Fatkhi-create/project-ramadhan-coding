@@ -1,0 +1,90 @@
+:root {
+--gold:        #C9A84C;
+--gold-light:  #E8D08A;
+--green-dark:  #1A3A2A;
+--green-mid:   #2D5A3D;
+--green-light: #4A8C60;
+--cream:       #FAF6EE;
+--sand:        #EDE0C4;
+--text:        #1C2B1C;
+--muted:       #6B7B6B;
+--white:       #ffffff;
+}
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; padding: 0; 
+}
+html { 
+    scroll-behavior: smooth; 
+}
+body {
+    display: flex;
+    font-family: 'Lora', Georgia, serif;
+    color: var(--text);  
+    background: var(--cream);  
+    min-height: 100vh;
+    flex-direction: column;
+}
+body::before {
+    content: '';
+    inset: 0;
+    background-image:
+        radial-gradient(ellipse 70% 40% at 10% 0%, #c9a84c14 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 100%, #2d5a3d17 0%, transparent 60%);
+    pointer-events: none;
+    position: fixed;
+    z-index: 0;
+}
+header {
+    text-align: center; 
+    color: var(--cream);
+    background: linear-gradient(150deg, var(--green-dark) 0%, var(--green-mid) 100%);
+    padding: 2rem 1.5rem 1.6rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px #00000033;
+    position: relative;
+    z-index: 10;
+}
+header::before {
+    content: '';
+    width: 260px; height: 260px;
+    border: 1.5px solid #c9a84c2e;
+    border-radius: 50%;
+    top: -100px; right: -60px;
+    position: absolute;
+}
+header::after {
+    content: '';
+    width: 180px; height: 180px;
+    border: 1.5px solid #c9a84c1f;
+    border-radius: 50%;
+    bottom: -70px; left: -30px;
+    position: absolute;
+}
+.header-inner { 
+    position: relative; 
+    z-index: 1; 
+}
+.header-logo { 
+    display: block;
+    font-size: 2rem; 
+    margin-bottom: .3rem; 
+}
+ header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+    color: var(--gold-light);
+    letter-spacing: .05em;
+}
+ header p.subtitle {
+    font-style: italic;
+    font-size: .83rem;
+    color: rgba(250,246,238,.6);
+    margin-top: .3rem;
+}
+/*responsif*/
+@media (max-width: 480px) {
+    .card { padding: 1.2rem 1rem; }
+    .quran-inputs { grid-template-columns: 1fr; }
+    .kalender-grid { gap: .3rem; }
+}

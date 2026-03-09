@@ -1,0 +1,89 @@
+.progress {
+    display: flex;
+    align-items: center; 
+    background: #1a3a2af2;
+    backdrop-filter: blur(6px);
+    padding: .9rem 1.5rem;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 1px solid #c9a84c33;
+    position: relative;
+    z-index: 9;
+}
+.progress-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .15rem;
+}
+.progress-pct {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    line-height: 1;
+}
+.progress-lbl {
+    font-size: .65rem;
+    color: #faf6ee80;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.progress-divider { 
+    width: 1px; 
+    height: 30px; 
+    background: #c9a84c40; 
+}
+.motivasi-badge {
+    font-style: italic;
+    font-size: .82rem;
+    color: var(--gold-light);
+    padding: .3rem .9rem;
+    border: 1px solid #c9a84c59;
+    border-radius: 2rem;
+}
+/*navigasi*/
+nav.tab-nav {
+    display: flex;  
+    top: 0;
+    background: var(--white);
+    border-bottom: 2px solid #e8e0d0;
+    box-shadow: 0 2px 12px #0000000f;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;     
+    z-index: 100;
+}
+nav.tab-nav::-webkit-scrollbar { 
+    display: none; 
+}
+.tab-btn {
+    display: flex;
+    flex: 1; 
+    flex-direction: column;
+    align-items: center; 
+    font-family: 'Lora', serif;
+    font-size: .82rem;
+    color: var(--muted); min-width: 90px;
+    background: transparent;  
+    padding: .85rem .5rem;
+    border: none;  
+    border-bottom: 3px solid transparent;
+    cursor: pointer;margin-bottom: -2px;
+    transition: all .2s;
+    white-space: nowrap;
+    gap: .2rem;
+}
+.tab-btn .tab-icon { 
+    font-size: 1.1rem; 
+}
+.tab-btn:hover { 
+    color: var(--green-mid); 
+    background: #f5faf5;
+}
+.tab-btn.active {
+    font-weight: 600;  
+    color: var(--green-dark);
+    border-bottom-color: var(--gold);
+}
+
