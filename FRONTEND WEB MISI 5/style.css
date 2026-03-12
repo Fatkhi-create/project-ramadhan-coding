@@ -1,0 +1,118 @@
+:root {
+--gold:        #C9A84C;
+--gold-light:  #E8D08A;
+--green-dark:  #1A3A2A;
+--green-mid:   #2D5A3D;
+--green-light: #4A8C60;
+--cream:       #FAF6EE;
+--sand:        #EDE0C4;
+--text:        #1C2B1C;
+--muted:       #6B7B6B;
+--white:       #ffffff;
+}
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+html { 
+    scroll-behavior: smooth; 
+}
+body {
+    display: flex;
+    font-family: 'Lora', Georgia, serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    flex-direction: column;
+}
+body::before {
+    content: '';
+    inset: 0;
+    background-image:
+        radial-gradient(ellipse 70% 40% at 10% 0%,  rgba(201,168,76,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 100%, rgba(45,90,61,.09)  0%, transparent 60%);
+    pointer-events: none;
+    position: fixed;
+    z-index: 0;
+}
+header {
+    text-align: center;
+    background: linear-gradient(150deg, var(--green-dark) 0%, var(--green-mid) 100%);
+    color: var(--cream);
+    padding: 2.6rem 1.5rem 2rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px #00000033;
+    position: relative; 
+    z-index: 10;
+}
+header::before {
+    content: ''; 
+    width: 300px; 
+    height: 300px;
+    border: 1.5px solid #c9a84c2e; 
+    border-radius: 50%;
+    top: -110px; 
+    right: -70px;
+    position: absolute;
+}
+header::after {
+    content: '';
+    width: 200px; 
+    height: 200px;
+    border: 1.5px solid #c9a84c1f; 
+    border-radius: 50%;
+    bottom: -80px; 
+    left: -40px; 
+    position: absolute;
+}
+.header-inner { 
+    position: relative; 
+    z-index: 1; 
+}
+.header-icon { 
+    display: block; 
+    font-size: 2.2rem; 
+    margin-bottom: .4rem; 
+}
+header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.1rem, 3.5vw, 2rem);
+    color: var(--gold-light); 
+    letter-spacing: .05em;
+}
+header p.subtitle {
+    font-style: italic; 
+    font-size: .88rem;
+    color: #faf6ee99; 
+    margin-top: .4rem;
+}
+.cahaya {
+    display: flex; 
+    align-items: center; 
+    gap: .8rem;
+    justify-content: center; 
+    margin-top: 1rem;
+}
+.cahaya span { 
+    height: 1px; 
+    width: 60px; 
+    background: var(--gold); 
+    opacity: .6; 
+}
+.cahaya i { 
+    color: var(--gold); 
+    font-style: normal;
+}
+
+@media (max-width: 100px) {
+.card { 
+    padding: 1.2rem 1rem; 
+}
+.filter-row { 
+    flex-direction: column;
+}
+.btn-fetch { 
+    width: 100%; 
+}
+}
